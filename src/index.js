@@ -1,16 +1,24 @@
-//funcion para simular la descarga de un archivo, utilizando promesas
+// funcion con async 
 
-function descascargarARchivo(){
+function decargarArchivo() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve("📁📁Archivo descargado exitosamente📁📁");
-        }, 5000);
+            resolve("archivo descargado");
+        }, 1000);
     });
 }
 
-descascargarARchivo().then(resultado => {
-    console.log(resultado);
-}).catch(error => {
-    console.log(error);
-});
 
+
+async function ejecutar() {
+
+try {
+    console.log("⌛⌛descarga en progreso")
+    const response = await decargarArchivo();
+    console.log(response);
+}catch (error) {
+    console.error("error al descargar archivo", error);
+    
+}
+}
+ejecutar();
