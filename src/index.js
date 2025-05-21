@@ -1,25 +1,32 @@
-// funcion con async 
+// // funcion con async 
 
-function decargarArchivo() {
-    return new Promise((resolve, reject) => {
+function descargarArchivo() {
+    return new Promise((resolve) => {
         setTimeout(() => {
-            resolve("archivo descargado");
-        }, 1000);
+            resolve("promesa ejecutada con exito despues de 8 segundos 👻😊");
+        }, 8000);
     });
 }
-
-
-
-async function ejecutar() {
-
-try {
-    console.log("⌛⌛descarga en progreso")
-    const response = await decargarArchivo();
+descargarArchivo()
+.then((response) => {
     console.log(response);
-}catch (error) {
-    console.error("error", error);
+})
+
+
+// async function ejecutar() {
+
+// try {
+//     console.log("⌛⌛descarga en progreso")
+//     const response = await decargarArchivo();
+//     console.log(response);
+// }catch (error) {
+//     console.error("error", error);
     
-}
-}
+// }
+// }
+
+
+
+
 
 
